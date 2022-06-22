@@ -2,6 +2,9 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
+  - libdeflate=1.9
+  - libcurl=7.81
+  - htslib=1.14
   - bwa =0.7.17
   - samtools =1.15
   - fastp =0.23.2
