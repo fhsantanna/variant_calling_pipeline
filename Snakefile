@@ -107,7 +107,6 @@ rule variant_call:
     shell:
         "samtools mpileup -A -d 0 -B --reference data/MN908947.fas -Q 0 {input} | ivar variants -p {output} -t 0.03 -m 5 -g data/MN908947.gff -r data/MN908947.fas"
 
-"""
 rule variant filtering:
     input: 
         "output/variant_call/{sample}.tsv"
@@ -117,4 +116,4 @@ rule variant filtering:
         "envs/mapping.yaml"
     shell:
         "ivar filtervariants -p {output} {input}"
-"""
+
